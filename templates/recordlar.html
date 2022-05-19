@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recordlar</title>
+</head>
+<body>
+      <h1> bizda bor rekordlar </h1>
+      {% for i in rekordlar %}
+      <br>
+      <h3> {{ i }} </h3>
+      {% endfor %}
+      <br>
+      <br>
+      <form method="post" action = "/recordlar/">{% csrf_token %}
+          <input type="date" placeholder="sanani kiriting" name="s">
+          <input type="text" placeholder="qaytardimi?" name="q">
+          <input type="date" placeholder="qaytarish sanasi" name="q_s">
+          <select name="k">
+              {% for kitob in kitoblar %}
+              <option value = "{{kitob.id}}">  {{kitob.nomi}} </option>
+              {% endfor %}
+          </select>
+          <select name="st">
+              {% for student in studentlar %}
+              <option value="{{student.id}}">{{student.ism}} </option>
+              {% endfor %}
+          </select>
+          <button type="submit"> qo`shish </button>
+      </form>
+</body>
+</html>

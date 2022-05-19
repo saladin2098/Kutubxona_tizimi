@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ustoz eedit</title>
+</head>
+<body>
+      <h1> ustozlarni edit qilsih </h1>
+      <form method="post" action="/ustoz/{{teacher.id}}/edit/">{% csrf_token %}
+          <input type="text" value="{{teacher.first_name}}" name="f_n">
+          <input type="text" value="{{teacher.last_name}}" name="l_n">
+          <input type="text" value="{{teacher.degree}}" name="d">
+          <button type="submit"> edit </button>
+      </form>
+</body>
+</html>

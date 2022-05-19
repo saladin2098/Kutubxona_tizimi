@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ustozlar</title>
+</head>
+<body>
+      <h1> bizdagi barcha ustozar</h1>
+      <br>
+      <br>
+      <br>
+      {% for i in ustozlar %}
+      <h3> {{ i }}</h3>
+      <button> <a href="/ustoz/{{i.id}}/"> Delete </a> </button>
+      <button> <a href="/ustoz/{{i.id}}/edit/"> edit </a></button>
+      {% endfor %}
+      <br>
+      <br>
+      <form method="post" action="/ustozlar/">{% csrf_token %}
+          <input type="text" placeholder="ismini kiriting" name="f_n">
+          <input type="text" placeholder="familyasini kiritng" name="l_n">
+          <input type="text" placeholder="degresini kiriting" name="d">
+          <button type="submit"> qo`shish </button>
+      </form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data</title>
+</head>
+<body>
+       <h1> bizdagi kitoblar</h1>
+       <br>
+       <br>
+        {% for i in books %}
+       <h2> {{i}}</h2>
+       <button> <a href="/kitob/{{i.id}}/"> delete </a></button>
+       <button> <a href="/kitob/{{i.id}}/edit/"> edit </a></button>
+        {% endfor %}
+        <h2> eng sahifasi ko`p kitob </h2>
+        {% for j in most %}
+         <h3> {{ j }}</h3>
+        {% endfor %}
+
+
+</body>
+</html>

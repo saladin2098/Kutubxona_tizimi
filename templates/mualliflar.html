@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mualliflar</title>
+</head>
+<body>
+      <h1> bizdagi mualliflar</h1>
+      {% for j in authors %}
+       <h3> {{ j }}</h3>
+      <button> <a href="/muallif/{{j.id}}/"> Delete </a> </button>
+      <button> <a href="/muallif/{{j.id}}/edit/"> edit </a></button>
+      {%  endfor %}
+            <br>
+            <br>
+            <br>
+      <form method="post" action="/mualliflar/" >{% csrf_token %}
+          <input type="text" placeholder="nomini kiritng" name="n">
+          <input type="text" placeholder="ismini kriting" name="i">
+          <input type="text" placeholder="tirikmi" name="tr">
+          <input type="number" placeholder="yoshini kiritng" name="y">
+          <input type="text" placeholder="jinsini kiritng" name="j">
+          <input type="number" placeholder="kitoblari soni" name="k_s">
+          <button type="submit"> qo`shish </button>
+
+      </form>
+      <h1> bizdagi mualliflar</h1>
+      {% for i in oldest %}
+       <h3> {{ i }}</h3>
+      {%  endfor %}
+</body>
+</html>

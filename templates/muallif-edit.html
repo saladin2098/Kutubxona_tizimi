@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>studetn -edit</title>
+</head>
+<body>
+      <h1> mualliflarni tahrirlang </h1>
+
+      <br>
+      <br>
+      <br>
+      <form method="post" action="/muallif/{{muallif.id}}/edit/" >{% csrf_token %}
+          <input type="text" value="{{muallif.nomi}}" name="n">
+          <input type="text" value="{{muallif.ism}}" name="i">
+          <input type="text" value="{{muallif.tirik}}" name="tr">
+          <input type="number" value="{{muallif.yosh}}" name="y">
+          <input type="text" value="{{muallif.jins}}" name="j">
+          <input type="number" value="{{mualllif.kitoblar_soni}}" name="k_s">
+          <button type="submit"> edit </button>
+
+      </form>
+</body>
+</html>

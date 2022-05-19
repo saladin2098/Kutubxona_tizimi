@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+       <h1> barcha yonalishlar </h1>
+       <br>
+       <br>
+       {% for j in spes %}
+       <h2> {{ j }} </h2>
+       <button> <a href="/yon/{{j.id}}/">  delete </a></button>
+       <button> <a href="/yon/{{j.id}}/edit/"> edit </a></button>
+
+       {% endfor %}
+       <br>
+       <br>
+       <br>
+       <form method="post" action="/yonalish/">{% csrf_token %}
+           <input type="text" placeholder="yonalish nomi" name="n">
+           <input type="number" placeholder="codni kiriting" name="c">
+           <input type="date" placeholder="start date" name="s_d">
+           <input type="text" placeholder="is active" name="ac">
+           <button type="submit"> qo`shish </button>
+
+       </form>
+</body>
+</html>

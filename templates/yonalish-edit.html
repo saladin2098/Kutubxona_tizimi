@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit yonalish</title>
+</head>
+<body>
+      <h1>yonalishni tahrirlash></h1>
+      <form method="post" action="/yon/{{yonal.id}}/edit/">{% csrf_token %}
+           <input type="text" value="{{yonal.name}}"  name="n">
+           <input type="number" value="{{yonal.code}}" name="c">
+           <input type="date" value="{{yonal.start_date}}" name="s_d">
+           <input type="text" value="{{yonal.is_active}}" name="ac">
+           <button type="submit"> edit </button>
+      </form>
+
+</body>
+</html>
